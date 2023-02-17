@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Grid from "../components/Grid.astro";
+import {Image} from '@astrojs/image/components';
+import images from './../../public/helpers/miniData.js';
+
+---
+
+<Layout
+  pageTitle="Minis"
+  description="A collection of minis I've painted over the past year(s)."
+  type="content"
+>
+  <main class="px-8 pt-16 mx-auto max-w-6xl sm:pt-24 lg:px-16">
+    <div class="flex flex-col mt-4 space-y-8">
+      <div class="flex flex-col space-y-4">
+        <h1
+          class="text-4xl font-bold tracking-tighter sm:text-5xl max-w-[25ch] mb-5 op-target"
+        >
+          Jared Painted These
+        </h1>
+        <div class="flex flex-col items-start pb-5 op-target sm:items-center sm:flex-row-reverse">
+          <p class="text-primary-300 -mt-5 ml-5 mr-5 md:mr-52">A collection of minis I've painted (primarily ~28mm, about the size of a Jolly Rancher). I've been painting for about 1 year now, but I've only recently started to take photos of my work. I'm still learning, but certainly enjoying the journey!</p>
+          <Image
+            class="rounded-2xl inset-0 w-2/5 mt-7 sm:mt-0 sm:w-half sm:max-w-half h-auto"
+            format="webp"
+            width={150}
+            height={150}
+            src="/images/candyForScale.jpg"
+            alt="28mm figurine beside jolly rancher for scale"
+          />
+        </div>
+
+        <Grid images={images} />
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,30 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<input name={name} id={name} type="checkbox" />
+<label
+  for={name}
+  class="flex justify-center items-center px-2 h-8 font-mono text-sm  leading-3 uppercase rounded-lg text-synth-blue bg-synth-purple transition"
+>
+  {name}
+</label>
+
+<style>
+  label {
+    user-select: none;
+    cursor: pointer;
+  }
+  input {
+    display: none;
+  }
+  :checked + label {
+    @apply text-synth-orange;
+    @apply border-x-synth-purple border-[1px];
+    @apply shadow-[0_0_5px_#4AC9E3];
+  }
+</style>

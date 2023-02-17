@@ -1,25 +1,43 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
-import Navigation from '../components/Navigation.astro';
+import Navigation from "../components/Navigation.astro";
+import ContactForm from "../components/ContactForm.jsx";
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="bg-synth-black">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-		<link rel="icon" type="image/png+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="w-full max-w-5xl mx-auto px-8 overflow-x-hidden text-white text-opacity-85">
-	<Navigation />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="icon" type="image/png+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="w-full max-w-5xl mx-auto px-8 overflow-x-hidden text-white text-opacity-85 pb-32"
+  >
+    <Navigation />
+    <slot />
+		<ContactForm />
+  </body>
 </html>
+
+<style is:global>
+  a {
+    @apply text-synth-blue;
+		transition: color 0.2s ease-in-out;
+  }
+	a:hover, a:active {
+	@apply text-synth-orange;
+	}
+  ::selection {
+
+  @apply bg-synth-pink;
+}
+</style>

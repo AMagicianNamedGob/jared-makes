@@ -1,6 +1,16 @@
 ---
+interface Props {
+  title: string;
+  image: string;
+  alt?: string;
+  subtitle?: string;
+  description?: string;
+}
+
 import Navigation from "./Navigation";
 import { Image } from "@astrojs/image/components";
+
+const { title, image, subtitle, description, alt } = Astro.props;
 ---
 
 <div class="bg-synth-blue p-1 relative top-0" id="header">
@@ -8,27 +18,23 @@ import { Image } from "@astrojs/image/components";
     class="flex justify-center bg-synth-purple bg-gradient-to-br from-synth-purple to-synth-black p-10 -ml-4 shadow-md shadow-slate-900 text-white text-opacity-95 text-left h-96"
     id="sub-header"
   >
-    <div class="bg-synth-pink-2 p-8 -ml-8 rounded-lg max-w-sm z-10 md:p-5">
-      <h1 class="text-4xl font-semibold text-synth-green md:text-5xl">
-        Hello!
+    <div class="bg-synth-pink-2 p-6 -ml-8 rounded-lg max-w-md z-10 overflow-hidden md:p-5">
+      <h1 class="text-4xl font-lighter text-zinc-700 uppercase rounded-sm bg-white tracking-tight mb-2 p-1 md:text-5xl">
+        {title}
       </h1>
-      <h2 class="text-xl font-semibold text-synth-green mb-2 md:text-2xl">
-        My name is Jared Truscott.
+      <h2 class="text-xl font-light mb-4 md:text-2xl">
+        {subtitle}
       </h2>
-      <p class="text-white leading-relaxed">
-        I'm a web developer, gadget maker, rookie chess player, cyclist, martial
-        artist, and painter of very small things. But mostly I make really cool
-        things for the internet.
-      </p>
+      <p class="text-white leading-relaxed" set:html={description} />
     </div>
 
     <div class="bg-synth-blue -rotate-12 mb-8 rounded-lg hidden sm:block">
       <div class="bg-synth-orange rotate-45 rounded-lg py-20">
         <Image
-          src="/images/about-home.webp"
+          src={image}
           class="bg-synth-black border-2 border-synth-black shadow-md shadow-slate-900 mx-8 -mt-24 rounded-full"
           id="header-image"
-          alt="logo"
+          alt={alt || "header image"}
           width="150px"
           height="150px"
           format="webp"
@@ -50,8 +56,6 @@ import { Image } from "@astrojs/image/components";
   const menuToggle = document.getElementById("menu-toggle");
   const header = document.getElementById("header");
   const subHeader = document.getElementById("sub-header");
-
-
 
   menuToggle.addEventListener("click", () => {
     header.classList.toggle("bg-synth-blue");
