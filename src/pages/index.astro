@@ -1,81 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout title="Jared Makes">
+  <Header />
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+<p>Skate ipsum dolor sit amet, Andy Takakjian bigspin rad method air heel flip. Backside nose bump steps pogo. Coping snake bail skate or die. Wax downhill casper slide freestyle. Opposite footed ollie north Powell Peralta boardslide cab flip. Vert durometer kickflip Saran Wrap. Invert melancholy skater darkslide. Hand rail ollie face plant cab flip. Air wheels skate or die crail grab Skateboard Shuffle. Trucks slide yeah drop in. Nose blunt pump disaster backside. Chicken wing lien air full pipe hang up. </p>
+
+<p>Late rad 270 900 skate or die gnarly. Body varial helipop half-flip freestyle regular footed lipslide. Helipop pressure flip boardslide ho-ho wall ride boneless. Gnarly salad grind tailslide rails sponsored roll-in. Dude Primo slide Alien Workshop handplant fastplant camel back vert. Roll-in cab flip face plant downhill wall ride tuna-flip. Casper soul skate crail slide nose transition nose blunt Bill Danforth. Noseblunt slide Skateboard Shuffle ollie north speed wobbles coper nosegrind indy grab. Wall ride egg plant coper Tracker helipop Slap poseur. </p>
+
+<p>Wheels of FIre opposite footed frontside air nose boardslide locals. Coffin stoked pool judo air tuna-flip Skull and Sword. Rodney Mullen speed wobbles alley oop 180 boardslide hang-up. Stoked casper Skull and Sword dude flypaper sick. Slap maxwell opposite footed soul skate 1080 skate or die. Rail cess slide feeble frontside chicken wing. Airwalk downhill pogo late full-cab. Fast plant salad grind 720 bearings ho-ho. Helipop sick bearings boned out ho-ho. </p>
+
+<p>Hang ten varial skater crooked grind rocket air smith grind. Powerslide freestyle betty Vans Primo slide ollie sponsored. Air manual fakie pool skate or die 180. Transfer Thunder bone air snake airwalk opposite footed hurricane. Airwalk acid drop soul skate lipslide nollie smith grind Cross Bones. Hardware slam g-turn Primo slide lip skater. Tail handplant Town & Country switch fast plant hang-up coping. Hurricane Love Bowl pressure flip wall ride kickflip coffin lip. Betty rip grip air Billy Ruff pogo spine boardslide. Mongo ollie backside transfer speed wobbles 50-50. </p>
+
+<p>Skater tic-tac drop in slap maxwell. Soul skate stalefish nose axle set. Pool egg plant hand rail Wes Humpston skater. Bail rail slide Colin McKay frontside rail. Skate Rock acid drop face plant kickturn blunt. Jai Alai Banks feeble 1080 grind roll-in. Manual baseplate nosepicker roll-in. Crail grab 900 hurricane wall ride. Donger layback hard flip slide betty. Nosebone late griptape opposite footed. </p>
+
+<p>Ollie north hang up axle baseplate Alternative Sports berm poseur crail grab. JFA 180 crail slide half-flip varial lip kingpin 360. Poseur slam hang ten feeble betty skater Primo slide. Bail nose layback ollie late Pantsman nosegrind hang ten. Face plant tail downhill lien air ollie hole Baker fakie out bruised heel. Axle 270 backside skater nose-bump rail rip grip. Skater coffin gnarly g-turn hardware transition airwalk. Vernon Courtland Johnson stalefish masonite rail slide slappy nose bump mini ramp mongo. Stalefish handplant transition Jason Dill powerslide nosebone downhill aerial. Egg plant kingpin quarter pipe hospital flip speed wobbles John Lucero hurricane half-cab. Ed Templeton 540 baseplate 270 method air yeah camel back grind. </p>
+
+<p>Varial casper stoked Donger shinner crail slide deck. Bigspin skate or die acid drop mute-air Cross Bones nosepicker wall ride. Street concave Saran Wrap boardslide 50-50 rip grip. Betty death box slap maxwell griptape full pipe aerial. Ollie hole bruised heel smith grind transition fast plant flail. Frigid air slob air gnar bucket Saran Wrap wall ride handplant. Kick-nose nosegrind hanger Kevin Harris 270 soul skate. Smith grind 360 grab nosepicker Rob Dyrdek kingpin bail. Pool sketchy pressure flip rail Saran Wrap judo air. Steps coping freestyle gnarly 270 fakie. </p>
+
+<p>Slide roll-in boardslide Jason Dill nosebone vert Kevin Harris crailtap. Snake alley oop grab half-cab street smith grind Burnside skate or die. Hang-up Pantsman launch ramp griptape slob air disaster concave handplant. Pool vert bank rip grip stoked hospital flip backside. Hang ten disaster nosegrind feeble casper slide air boneless. Half-flip Hugh Bod Boyle kickflip 1080 rip grip body varial transfer coper. Bruised heel crail grab Duel at Diablo poseur crail slide lien air mongo shinner. Opposite footed soul skate frontside griptape stalefish hang up nose blunt. Baseplate slam fakie trucks pop shove-it layback betty. </p>
+
+<p>Rocket air wax bone air Christ air gnarly street 900. Rails skater shinner fastplant finger flip slob air Bullet 66 dude. Bank roll-in Japan air g-turn speed wobbles sponsored nosegrind. Soul skate bank hospital flip slob air slide 360 ollie hole Rat Bones. Transfer handplant melancholy g-turn airwalk nollie axle. Mute-air hardware 180 salad grind Primo slide ollie hole pump Agent Orange. Hanger stalefish nosegrind pogo durometer drop in Jim Phillips egg plant. Sean Cliver kick-nose skate key 270 disaster flypaper bigspin handplant. Spine camel back ollie hole 540 gnar bucket hand rail betty. Death box noseblunt slide transfer crail slide risers Jordan Richter chicken wing 50-50. Finger flip bail steps boardslide nollie drop in betty. 360 varial kingpin pop shove-it coper nose lien air. </p>
+
+<p>Pivot switch bruised heel kickflip g-turn. Pop shove-it boneless Jeremy Klein 1080 half-flip rad. Birdie melancholy Pantsman crailtap boneless chicken wing. Fiesta Mall hang-up bearings noseblunt slide feeble tuna-flip. Gap kidney durometer stoked sketchy. 50-50 camel back gnar bucket Kevin Jarvis stoked locals. Gator bigspin transfer 180 goofy footed ollie north. Spine hospital flip pressure flip Tracker bluntslide. Sketchy hip 50-50 hand rail rails. </p>
+
+
+  lorem
+</Layout>

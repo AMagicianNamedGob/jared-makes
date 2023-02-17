@@ -1,0 +1,31 @@
+---
+const routes = ["Home", "About", "Projects", "Minis", "Blog"];
+import { Image } from '@astrojs/image/components';
+
+---
+
+<div class="bg-synth-blue p-1">
+
+  <nav
+    class="block bg-synth-pink-2 p-2 -mr-4 shadow-md shadow-slate-900 z-10 relative">
+    <ul class="flex flex-row w-full items-end justify-end">
+    <li class="mr-auto hidden sm:block">
+    <a href="/" ><Image src="/favicon.png" alt="logo" width={50} height={50} format="webp" fit="cover"></a>
+
+    </li>
+      {
+        routes.map((route) => (
+          <li>
+            <a
+              rel="prefetch"
+              class="block px-2 text-white text-opacity-90 font-light hover:text-synth-orange active:text-synth-orange sm:px-4"
+              href={route === "Home" ? "/" : `/${route.toLowerCase()}`}
+            >
+              {route}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>
