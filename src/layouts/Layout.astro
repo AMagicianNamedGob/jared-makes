@@ -24,10 +24,9 @@ const { title, description, type, image, alt } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="icon" type="image/png+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{title || "Jared Makes"}</title>
 
     <SEO
       titleDefault={title || "Jared Makes"}

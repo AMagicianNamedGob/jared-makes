@@ -18,12 +18,14 @@ const { projects } = Astro.props;
     projects.map((p: Project) => (
         <li class="relative w-full rounded-2xl shadow-lg transition hover:scale-x-105 h-[400px] shadow-black">
       <a class="transition-all group" href={p.link} target="_blank">
+
           <Image
             width={400}
             height={400}
             class="object-cover absolute z-10 w-full h-full rounded-lg"
-            src={`images/${p.name.replace(/ /g, "").toLowerCase()}.webp`}
+            src={`/images/${p.name.replace(/ /g, "").toLowerCase()}.webp`}
             alt={`Picture of ${p.name.replace(/ /g, "").toLowerCase()}`}
+            format="webp"
           />
 
           <div class="flex relative z-20 flex-col gap-2 justify-end p-4 w-full h-full">
