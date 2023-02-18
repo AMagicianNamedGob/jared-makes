@@ -29,7 +29,7 @@ const tags = [
 
 ---
 
-<Layout>
+<Layout title='Blog' >
   <Header
     title="Blog"
     subtitle="Jared Writes"
@@ -37,10 +37,10 @@ const tags = [
     image="/images/about-home.webp"
   />
 
-  <h3 class="text-3xl font-bold tracking-tighter sm:text-4xl mt-6 mb-4">
+  <h3 class="text-3xl font-bold tracking-tighter mt-12 mb-4sm:text-4xl">
     Filter by tags:
   </h3>
-  <div class="mb-8">
+  <div class="mt-4 mb-8">
     <ul class="flex flex-row flex-wrap gap-2">
       {tags.map((t) => <SelectableTags name={t} />)}
     </ul>
@@ -64,3 +64,34 @@ const tags = [
   }
   </div>
 </Layout>
+
+<script define:vars={{ tags }}>
+  let blogPosts = document.querySelectorAll("div[data-tags]");
+  let filters = document.querySelectorAll("input");
+
+  let tagMap = Object.assign(...tags.map((t) => ({ [t]: false })));
+
+  for (const filter of filters) {
+    filter.addEventListener("change", (e) => {
+      let isChecked = e.target.checked;
+      let name = filter.name;
+      tagMap[name] = isChecked;
+
+      toggleVisibility();
+    });
+  }
+
+  function toggleVisibility() {
+    let checkedTags = Object.keys(tagMap).filter((t) => tagMap[t] === true);
+
+    for (const blogPost of blogPosts) {
+      let tags = blogPost.dataset.tags.split(",");
+
+      if (checkedTags.every((t) => tags.includes(t))) {
+        blogPost.style.display = "block";
+      } else {
+        blogPost.style.display = "none";
+      }
+    }
+  }
+</script>

@@ -7,31 +7,36 @@ interface Props {
   title: string;
   description: string;
   tags: string[];
-  url?: string;
+  url: string;
 }
 
 const { date, readTime, title, description, tags, url } = Astro.props;
 ---
 
-<div class="sm:pl-4 sm:border-l sm:border-primary-700" data-tags={tags}>
-  <article class="overflow-hidden divide-none">
+<div
+  class="pl-6 border-b border-synth-pink-2 border-opacity-40 w-10/12"
+  data-tags={tags}
+>
+  <article class="overflow-hidden divide-none pb-4">
     <div class="flex flex-col gap-2 py-2 sm:px-6">
-      <h3 class="text-xl font-semibold tracking-tight">{title}</h3>
-      <div class="flex flex-row gap-2 justify-start text-sm text-primary-400">
-        <time>{date}&nbsp;•</time>
+      <h4 class="text-xl font-semibold tracking-tight -mb-1">{title}</h4>
+      <div
+        class="flex flex-row text-white text-opacity-50 justify-start text-sm"
+      >
+        <time>{date} &nbsp;</time>
         <span>{readTime}</span>
+      </div>
+
+      <div class="flex flex-col gap-8 pt-0.5 ">
+        <ul class="flex flex-row flex-wrap gap-2">
+          {tags.map((tag) => <p class="flex justify-center items-center px-1 py-0.5 font-mono text-xs tracking-wide leading-snug uppercase text-synth-blue bg-synth-purple rounded-md">{tag}</p>)}
+        </ul>
       </div>
     </div>
 
-    <div class="py-2 text-base sm:px-6 max-w-[65ch]">
-      {description}
+    <div class="py-2 px-4 sm:px-6 max-w-[65ch]">
+      {description} ... <a href={url} >Read more ›</a>
     </div>
 
-    <div class="flex flex-col gap-8 py-2 sm:px-6">
-      <ul class="flex flex-row flex-wrap gap-2">
-        {tags.map((tag) => <Tag>{tag}</Tag>)}
-      </ul>
-      <a href={url}>Read more ›</a>
-    </div>
   </article>
 </div>

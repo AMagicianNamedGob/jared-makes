@@ -7,7 +7,6 @@ interface Props {
   description?: string;
 }
 
-import Navigation from "./Navigation";
 import { Image } from "@astrojs/image/components";
 
 const { title, image, subtitle, description, alt } = Astro.props;
@@ -18,8 +17,13 @@ const { title, image, subtitle, description, alt } = Astro.props;
     class="flex justify-center bg-synth-purple bg-gradient-to-br from-synth-purple to-synth-black p-10 -ml-4 shadow-md shadow-slate-900 text-white text-opacity-95 text-left h-96"
     id="sub-header"
   >
-    <div class="bg-synth-pink-2 p-6 -ml-8 rounded-lg max-w-md z-10 overflow-hidden md:p-5">
-      <h1 class="text-4xl font-lighter text-zinc-700 uppercase rounded-sm bg-white tracking-tight mb-2 p-1 md:text-5xl">
+    <!-- info box -->
+    <div
+      class="bg-synth-pink-2 p-4 -ml-12 -mt-6 rounded-lg max-w-md z-10 overflow-hidden md:p-5"
+    >
+      <h1
+        class="text-4xl font-lighter text-zinc-700 uppercase rounded-sm bg-white tracking-tight mb-2 p-1 md:text-5xl"
+      >
         {title}
       </h1>
       <h2 class="text-xl font-light mb-4 md:text-2xl">
@@ -28,6 +32,7 @@ const { title, image, subtitle, description, alt } = Astro.props;
       <p class="text-white leading-relaxed" set:html={description} />
     </div>
 
+    <!-- image boxes -->
     <div class="bg-synth-blue -rotate-12 mb-8 rounded-lg hidden sm:block">
       <div class="bg-synth-orange rotate-45 rounded-lg py-20">
         <Image
@@ -35,19 +40,21 @@ const { title, image, subtitle, description, alt } = Astro.props;
           class="bg-synth-black border-2 border-synth-black shadow-md shadow-slate-900 mx-8 -mt-24 rounded-full"
           id="header-image"
           alt={alt || "header image"}
-          width="150px"
-          height="150px"
+          width={150}
+          height={150}
           format="webp"
         />
       </div>
     </div>
   </div>
+
+
   <Image
     src="/images/eject_FILL0_wght400_GRAD0_opsz48.svg"
     class="ml-auto mr-3 transition"
     alt="open or close dropdown menu"
-    width="32px"
-    height="32px"
+    width={32}
+    height={32}
     id="menu-toggle"
   />
 </div>
@@ -56,6 +63,7 @@ const { title, image, subtitle, description, alt } = Astro.props;
   const menuToggle = document.getElementById("menu-toggle");
   const header = document.getElementById("header");
   const subHeader = document.getElementById("sub-header");
+  if (!menuToggle || !header || !subHeader) throw new Error("Missing elements");
 
   menuToggle.addEventListener("click", () => {
     header.classList.toggle("bg-synth-blue");
