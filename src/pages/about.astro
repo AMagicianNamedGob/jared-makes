@@ -1,17 +1,14 @@
 ---
-import AboutImage from "../components/AboutImage.astro";
+// import AboutImage from "../components/AboutImage.astro";
 import Experience from "../components/Experience.astro";
 import Layout from "../layouts/Layout.astro";
+import About from "../components/About.jsx";
 ---
 
-<Layout
-  pageTitle="About"
-  description="I am Daniel King. I live in San Francisco, where I work on my startups. "
-  type="content"
-  image="images/about.png"
->
+<Layout title="About">
   <main class="px-8">
-    <AboutImage />
+    <About client:load/>
+    <!-- <AboutImage /> -->
     <Experience />
   </main>
 </Layout>

@@ -8,6 +8,8 @@ interface Props {
 }
 
 import { Image } from "@astrojs/image/components";
+import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline'
+
 
 const { title, image, subtitle, description, alt } = Astro.props;
 ---
@@ -49,14 +51,7 @@ const { title, image, subtitle, description, alt } = Astro.props;
   </div>
 
 
-  <Image
-    src="/images/eject_FILL0_wght400_GRAD0_opsz48.svg"
-    class="ml-auto mr-3 transition"
-    alt="open or close dropdown menu"
-    width={32}
-    height={32}
-    id="menu-toggle"
-  />
+<ChevronDoubleDownIcon id="menu-toggle" className="ml-auto mr-3 h-8 text-synth-black opacity-40 transition"/>
 </div>
 
 <script>
@@ -73,8 +68,8 @@ const { title, image, subtitle, description, alt } = Astro.props;
     header.classList.toggle("-mb-80");
 
     subHeader.classList.toggle("opacity-0");
-    menuToggle.classList.toggle("opacity-50");
-    menuToggle.classList.toggle("opacity-100");
+    menuToggle.classList.toggle("opacity-40");
+    menuToggle.classList.toggle("opacity-90");
     menuToggle.classList.toggle("rotate-180");
   });
 </script>

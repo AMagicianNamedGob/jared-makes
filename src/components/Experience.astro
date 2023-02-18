@@ -28,21 +28,21 @@ const jobs = [
 
 <section
   aria-labelledby=":rr:"
-  class="mx-auto max-w-5xl sm:px-6 sm:border-l sm:border-primary-700/40"
+  class="mt-12 mx-auto max-w-5xl sm:px-6 "
 >
   <div class="grid grid-cols-1 gap-y-8 items-baseline md:grid-cols-4">
     <h2
       id=":rr:"
-      class="text-lg font-semibold tracking-tight sm:text-xl text-primary-100"
+      class="text-lg font-semibold tracking-tight sm:text-xl text-white/50"
     >
-      Experience
+      Where I've Been
     </h2>
     <div class="md:col-span-3">
       <ul role="list" class="space-y-16">
         {
           jobs.map((j) => (
             <li class="flex flex-col items-start">
-              <div class="flex flex-row justify-between items-baseline pl-2 w-full border-l border-primary-700">
+              <div class="flex flex-row justify-between items-baseline pl-2 w-full border-l-2 border-synth-pink-2">
                 <div class="flex flex-col">
                   <div class="flex flex-row gap-2 items-center">
                     {j.link && (
@@ -51,26 +51,26 @@ const jobs = [
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <h3 class="text-base font-semibold tracking-tight sm:max-w-none sm:text-lg max-w-[20ch] text-primary-100">
+                        <h3 class="text-base font-semibold tracking-tight sm:max-w-none sm:text-lg max-w-[20ch]">
                           {j.company}
                         </h3>
                       </a>
                     )}
                     {!j.link && (
-                      <h3 class="text-base font-semibold tracking-tight sm:max-w-none sm:text-lg max-w-[20ch] text-primary-100">
+                      <h3 class="text-base font-semibold tracking-tight sm:max-w-none sm:text-lg max-w-[20ch] text-white/80">
                         {j.company}
                       </h3>
                     )}
                   </div>
 
-                  <h2 class="text-sm tracking-tight sm:max-w-none sm:text-base max-w-[20ch] text-primary-300">
+                  <h2 class="text-sm tracking-tight sm:max-w-none sm:text-base max-w-[20ch] text-white/50">
                     {j.title}
                   </h2>
                 </div>
-                <time class="text-sm text-primary-600">{j.timeRange}</time>
+                <time class="text-sm text-white/40">{j.timeRange}</time>
               </div>
 
-              <p class="z-10 mt-4 text-sm text-primary-300 max-w-[75ch]">
+              <p class="z-10 mt-4 text-sm text-white/80 max-w-[75ch]">
                 {j.description}
               </p>
             </li>
