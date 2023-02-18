@@ -15,15 +15,10 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
-    mdx(),
-    prefetch(),
-    sitemap(),
-    react(),
-    tailwind(),
-  ],
+  integrations: [image({
+    serviceEntryPoint: "@astrojs/image/sharp"
+  }), mdx(), prefetch(), sitemap(), react(), tailwind()]
 });

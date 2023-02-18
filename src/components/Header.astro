@@ -33,11 +33,11 @@ const { title, image, subtitle, description, alt } = Astro.props;
     </div>
 
     <!-- image boxes -->
-    <div class="bg-synth-blue -rotate-12 mb-8 rounded-lg hidden sm:block">
-      <div class="bg-synth-orange rotate-45 rounded-lg py-20">
+    <div class="bg-synth-blue -rotate-12 mb-20 rounded-lg hidden sm:block">
+      <div class="bg-synth-purple border-2 border-synth-black rotate-45 rounded-lg py-20">
         <Image
           src={image}
-          class="bg-synth-black border-2 border-synth-black shadow-md shadow-slate-900 mx-8 -mt-24 rounded-full"
+          class="bg-synth-black border-2 border-synth-black shadow-md shadow-slate-900 mx-8 -mt-24 ml-6 -mb-6 rounded-full"
           id="header-image"
           alt={alt || "header image"}
           width={150}

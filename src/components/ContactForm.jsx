@@ -4,7 +4,6 @@ import { useForm, ValidationError } from "@formspree/react";
 export default () => {
   const [state, handleSubmit] = useForm("xwkjlpbv");
   if (state.succeeded) {
-
     return <p>Thanks for your message. I'll respond to you soon!</p>;
   }
 
@@ -13,27 +12,29 @@ export default () => {
       <form
         onSubmit={handleSubmit}
         method="POST"
-        className="mt-12 p-6 py-5 px-4 w-full rounded-lg border sm:px-6 border-synth-purple"
+        className="mt-12 p-6 py-5 px-4 w-full rounded-lg border sm:px-6 border-zinc-900"
       >
-        <h2 className="flex flex-row items-center text-sm font-semibold text-primary-300">
+        <h5 className="flex flex-row items-center text-sm font-semibold text-white text-opacity-50">
           <svg
-            viewBox="0 0 24 24"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6 stroke-1 stroke-primary-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
           >
             <path
-              d="M7 9l5 3.5L17 9"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            ></path>
-            <path d="M2 17V7a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2z"></path>
+              stroke-linecap="round"
+              d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25"
+            />
           </svg>
-          <span className="ml-3 text-lg">Contact Jared</span>
-        </h2>
-        <p className="mt-2 text-sm text-primary-400">
+
+          <span className="ml-1 text-lg">Contact Jared</span>
+        </h5>
+        <p className="mt-2 text-sm text-white text-opacity-50">
           What's up? Want to talk mini painting? Wanna' play some chess?
-          Question about the Jam Stack? I'm your Huckleberry!
+          Question about the Jam Stack? Just send me an email and I'll get back
+          to you as soon as I can.
         </p>
         <div className="flex flex-col gap-4 mt-6">
           <input
@@ -43,7 +44,7 @@ export default () => {
             required
             id="email"
             name="email"
-            className="flex-auto px-3 min-w-0 h-12 bg-white rounded-md border shadow-md appearance-none sm:text-sm focus:ring-4 focus:outline-none shadow-primary-800/5 border-primary-700 bg-primary-700/[0.15] text-primary-200 placeholder:text-primary-500 focus:border-accent-400 focus:ring-accent-400/10"
+            className="flex-auto px-3 min-w-0 h-12 rounded-md border-2 sm:text-sm focus:ring-2 focus:outline-none border-synth-purple bg-synth-purple bg-opacity-20 text-white/80 placeholder:text-synth-white/50 focus:border-synth-orange focus:ring-synth-yellow"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
           <textarea
@@ -52,7 +53,7 @@ export default () => {
             placeholder="Your message ..."
             name="message"
             aria-label="message"
-            className="p-3 min-w-0 rounded-md border shadow-md appearance-none sm:text-sm focus:ring-4 focus:outline-none border-primary-700 bg-primary-700/[0.15] text-primary-200 placeholder:text-primary-500 focus:border-accent-400 focus:ring-accent-400/10"
+            className="p-3 min-w-0 rounded-md border-2 sm:text-sm focus:ring-2 focus:outline-none border-synth-purple bg-synth-purple bg-opacity-20 text-white/80 placeholder:text-synth-white/50 focus:border-synth-orange focus:ring-synth-yellow"
           ></textarea>
           <ValidationError
             prefix="Message"
@@ -60,7 +61,7 @@ export default () => {
             errors={state.errors}
           />
           <button
-            className="flex-none py-2 px-3 text-sm font-semibold rounded-md transition active:transition-none outline-offset-2 text-primary-100 bg-primary-700 hover:bg-primary-600 active:bg-primary-700 active:text-primary-100/70"
+            className="flex-none py-2 px-3 text-sm font-semibold rounded-md transition outline-offset-2 text-white/80 bg-synth-purple/50 hover:bg-synth-green/80 active:bg-synth-green/70 hover:text-synth-black active:text-synth-black/70"
             type="submit"
             disabled={state.submitting}
           >
