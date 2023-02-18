@@ -30,7 +30,7 @@ const { title, description, type, image, alt } = Astro.props;
     <title>{title}</title>
 
     <SEO
-      title={title || "Jared Makes"}
+      titleDefault={title || "Jared Makes"}
       description={description || defaultDescription}
       openGraph={{
         basic: {
