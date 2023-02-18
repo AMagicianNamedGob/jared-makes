@@ -1,0 +1,86 @@
+---
+title: "Google Page Speed Insights: A Perfect Score"
+description: "I spent my prior job maintaining 8, complex, and sophisticated e-commerce sites. It was a great experience, but it also taught me a lot about the importance of performance."
+pubDate: 2023-02-19
+tags: ["web", "Astro", "performance"]
+---
+
+# Google Page Speed Insights: Achieving A Perfect Score
+
+## Or, how I learned to stop worrying and love [Astro](https://astro.build/)
+
+I spent my prior job maintaining 8, complex, and sophisticated e-commerce sites. It was a great experience, but it also taught me a lot about the importance of performance. I learned a website that loads quickly is a website that users will stick around on. I also learned that a website that loads quickly is a website that  [Google will rank higher in search results](https://developers.google.com/search/blog/2018/01/using-page-speed-in-mobile-search). I learned that a website that loads quickly is a website that will make you look good to your boss.😉 But mostly I learned that **it's really damn hard to get a perfect score on Google Page Speed Insights**.
+
+## Then I Used Astro
+
+<img class="my-2" src="/images/perfect10.gif" alt="perfect score on Google Page speed rank" />
+
+If you've ever tried to get a perfect score on Google Page Speed Insights, you know that it's not easy. You have to be a performance ninja, and you may even have to be willing to compromise on some things. Thanks to Astro, I don't believe that's true anymore.
+
+### What is Astro?
+
+Astro is an all-in-one web framework for building fast, content-focused websites. It's built on the following [five core design principles](https://docs.astro.build/en/concepts/why-astro/):
+
+1. Content-focused.
+2. Server-first.
+3. Fast by default (for real, like *really* for real).
+4. Easy to use.
+5. Fully-featured and flexible.
+
+I could do an entire post gushing about Astro, but I'll spare you. I suspect that if you're reading this, you're already sold on Astro anyway, so let me get to the good stuff.
+
+## How I got a perfect score on Google Page Speed Insights
+
+Out of the box, Astro is very performant, but Google is picky about *everything* when it comes to performance. I even had some issues obtaining the perfect score because an image took too long to download on 3G. Building sites that support 3G - fiber optic - and everything in between is a challenge of Sisyphean proportions, and, if I'm being honest, it's not a realistic goal, but I really wanted to see if I could get a perfect score on Google Page Speed Insights.
+
+### Step 1: Build the site
+
+I know right? It's that easy. Just using Astro was enough to get my score up to the middle 80s on performance and well within the mid to upper 90s on accessibility, best practices, and SEO.
+
+### Step 2: Optimize images
+
+Aghhhhh. Images... That means Photoshop or compression tools, or some other tool that doesn't involve writing code. Kryptonite. However, Astro has a built-in [image optimizer](https://docs.astro.build/en/guides/integrations-guide/image/) that you can use to optimize your images. It's super easy to use, install, and configure. While I did use [Cloudinary](https://cloudinary.com/) for some of my images, the images on my [Projects](/projects) page are all Astro-optimized images. It's as easy as installing the package and writing a little bit of code. The syntax is very similar to `jsx`.
+
+```jsx
+import {Image} from '@astrojs/image/components'
+
+const { projects } = Astro.props;
+
+  {
+    projects.map((project) => (
+        <li class="...">
+          <Image
+            width={400}
+            height={400}
+            src={`/images/${project.fileName}.png`}
+            alt={`Picture of ${project.name}`}
+            format="webp"
+          />
+          ...
+    }
+```
+
+You're seeing that correctly, the image transformations are baked in; resized and reformatted at build time by Astro. I didn't even have to bother with `loading="lazy"` to lazy load, Astro just did it.
+
+### Step 3: Apply the *appropriate* template directives to the components
+
+I'm not going to go into detail about this (as that's outside the scope of this post), but you can read more about it [in the Astro docs](https://docs.astro.build/en/reference/directives-reference/#client-directives). Basically, you can use any popular framework inside Astro. As an example, my home page is a React component, and the contact form used across my site is another React component. I could have just as easily used Svelte, Vue, or some others; I could have even used **multiple** frameworks on the same page. Although I am a huge fan of [Svelte](https://svelte.dev/), I used React because that's what I use in my day job, and it was just faster.
+
+I had an issue with the contact form component where the form was blocking the main thread, and I was getting a warning on Google Page Speed Insights. I was able to fix this by adding the `client:visible` directive to the component. This tells Astro to only render the component when it's visible in the viewport. This is a great example of how Astro is flexible enough to allow you to use the tools that you're comfortable with, while still getting a perfect score on Google Page Speed Insights.
+
+Once I added the `client:visible` directive, my score jumped to 99 on performance. The last 1% was going to be the custom font I was using.
+
+### Step 4: Non-blocking custom fonts
+
+I thought this step would be a no-brainer, but as this [long article suggests](https://web.dev/font-best-practices/), it's a painful amount of work for what was essentially a 1% bump on my page speed score; but it had to be done. However, I wanted to find a way to do it that worked with the Astro design principles. Ultimately I only had to use `font-display: swap`, which suited my case perfectly. Mileage may vary for your needs, I'll be sure to update this post if I find any drawbacks to this solution. Here's the code:
+
+```css
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  src: url('https://rsms.me/inter/inter.css');
+  font-display: swap;
+}
+```
+
+In the end, Astro did most of the heavy lifting. I'm excited to see where [the Astro team is going to take us](https://github.com/orgs/withastro/projects/11). I'm already planning my next Astro project, and I'm looking forward to seeing what the Astro community comes up with. 🚀

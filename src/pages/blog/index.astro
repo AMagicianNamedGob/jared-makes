@@ -8,8 +8,10 @@ import readingTime from "reading-time";
 import BlogPost from "../../components/BlogPost.astro";
 
 let allPosts = await getCollection("posts").then();
+const nonDraftPosts = allPosts.filter((p) => !p.data.draft);
+
 // sort by date
-allPosts = allPosts.filter(a => a.data.pubDate).sort((a, b) => {
+allPosts = nonDraftPosts.filter(a => a.data.pubDate).sort((a, b) => {
   let dateA = new Date(a.data.pubDate),
     dateB = new Date(b.data.pubDate);
   if (dateA < dateB) return 1;
@@ -33,7 +35,7 @@ const tags = [
   <Header
     title="Blog"
     subtitle="Jared Writes"
-    description="A collection of my random jibbers and jabbers and hootenannies. You can use the tags below to filter the posts."
+    description={"Jared <span class='text-lg text-bold text-synth-yellow'>eventually </span>writes about web development, programming, and other things"}
     image="/images/about.webp"
   />
 

@@ -1,9 +1,23 @@
-import { CameraIcon } from "@heroicons/react/20/solid";
+import {Cloudinary} from "@cloudinary/url-gen";
+
+// Import the responsive plugin
+import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
+
+// cloudinary instance
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: "jared-truscott",
+  },
+});
+
+  const img = cld.image('about.webp');
+
+
 
 export default function Example() {
   return (
     <div className="overflow-hidden bg-synth-black">
-      <div className="relative mx-auto max-w-7xl py-16 px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl py-6 px-6 lg:px-8 lg:py-16">
         <div className="absolute top-0 bottom-0 left-3/4 hidden w-screen bg-synth-pink-2 lg:block" />
         <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
           <div>
@@ -11,7 +25,7 @@ export default function Example() {
               Jared Truscott
             </h2>
             <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-synth-yellow sm:text-4xl">
-              Web Developer Addicted To Interests
+              Web Developer
             </h3>
           </div>
         </div>
@@ -53,12 +67,11 @@ export default function Example() {
             <div className="relative mx-auto max-w-prose text-base lg:max-w-none">
               <figure>
                 <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
-                  <img
+                  <AdvancedImage
                     className="rounded-lg object-cover object-center shadow-lg"
-                    src="/images/about.webp"
+                    cldImg={img}
                     alt="Jared Truscott"
-                    width={1184}
-                    height={1376}
+                    plugins={[responsive({steps:200}), placeholder({mode:'blur'}) ]}
                   />
                 </div>
               </figure>
