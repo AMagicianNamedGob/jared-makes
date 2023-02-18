@@ -1,17 +1,26 @@
 ---
 export interface Props {
-  title: string;
+  title?: string;
+  description?: string;
+  type?: string;
+  image?: string;
+  alt?: string;
 }
 
 import Navigation from "../components/Navigation.astro";
 import ContactForm from "../components/ContactForm.jsx";
 import Footer from "../components/Footer.astro";
+import { SEO } from "astro-seo";
+import '../styles/global.css'
 
-const { title } = Astro.props;
+const defaultDescription =
+  "Jared Truscott is a web developer located in Pennsylvania. He specializes in the Jamstack. Jared makes blazing fast websites, and web application with a focus in e-commerce.";
+
+const { title, description, type, image, alt } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-synth-black">
+<html lang="en" class="bg-synth-black antialiased">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -19,27 +28,32 @@ const { title } = Astro.props;
     <link rel="icon" type="image/png+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <SEO
+      title={title || "Jared Makes"}
+      description={description || defaultDescription}
+      openGraph={{
+        basic: {
+          title: title || "Jared Makes",
+          type: type || "website",
+          image: image || "/images/og_image.png",
+        },
+        image: {
+          alt: alt || "logo for jaredmakes.com",
+        },
+        optional: {
+          description: description || defaultDescription,
+        },
+      }}
+    />
   </head>
+
   <body
-    class="w-full max-w-5xl mx-auto px-8 overflow-x-hidden text-white text-opacity-90 "
+    class="w-full max-w-5xl mx-auto px-8 overflow-x-hidden text-white text-opacity-90"
   >
     <Navigation />
     <slot />
-		{title && <ContactForm client:visible/>}
+    <ContactForm client:visible />
     <Footer />
   </body>
 </html>
-
-<style is:global>
-  a {
-    @apply text-synth-blue;
-		transition: color 0.2s ease-in-out;
-  }
-	a:hover, a:active {
-	@apply text-synth-green;
-	}
-  ::selection {
-
-  @apply bg-synth-pink;
-}
-</style>

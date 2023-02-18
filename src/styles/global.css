@@ -1,0 +1,18 @@
+
+/* imported by Astro */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+a {
+  @apply text-synth-blue;
+  transition: color 0.2s ease-in-out;
+}
+a:hover,
+a:active {
+  @apply text-synth-green;
+}
+::selection {
+  @apply bg-synth-pink;
+}

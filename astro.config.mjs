@@ -18,6 +18,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  site:"https://www.jaredmakes.com",
   integrations: [image({
     serviceEntryPoint: "@astrojs/image/sharp"
   }), mdx(), prefetch(), sitemap(), react(), tailwind()]

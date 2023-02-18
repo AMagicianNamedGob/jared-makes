@@ -11,7 +11,7 @@ export default function Example() {
               Jared Truscott
             </h2>
             <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-synth-yellow sm:text-4xl">
-              Web Developer & Maker Of Things
+              Web Developer Addicted To Interests
             </h3>
           </div>
         </div>
