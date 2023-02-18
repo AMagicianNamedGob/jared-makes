@@ -14,15 +14,15 @@ const { date, readTime, title, description, tags, url } = Astro.props;
 ---
 
 <div>
-  <article class="pt-16 w-10/12">
+  <article class="pt-10 w-10/12">
     <div class="flex flex-col gap-2 p-2 bg-synth-pink-2 bg-opacity-40 rounded-md transition group hover:bg-synth-purple hover:scale-[101%]">
       <a
         href={url}
         rel="prefetch"
       >
-        <h4 class="text-xl text-white text-opacity-80 font-semibold tracking-tight group-hover:text-synth-orange">{title}</h4>
+        <h4 class="text-xl text-white text-opacity-80 font-semibold tracking-tight group-hover:text-synth-green">{title}</h4>
       </a>
-      <div class="flex flex-row text-white text-opacity-50 ml-2 mt-0.5 justify-start text-sm group-hover:text-synth-orange">
+      <div class="flex flex-row text-white text-opacity-50 ml-2 mt-0.5 justify-start text-sm group-hover:text-synth-green">
 
         <time>{date} &nbsp;</time>
         <span>{readTime}</span>

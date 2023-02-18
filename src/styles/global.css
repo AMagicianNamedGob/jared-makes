@@ -1,0 +1,27 @@
+
+/* imported by Astro */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  src: url('https://rsms.me/inter/inter.css');
+  font-display: swap;
+
+}
+
+a {
+  @apply text-synth-blue;
+  transition: color 0.2s ease-in-out;
+}
+a:hover,
+a:active {
+  @apply text-synth-green;
+}
+::selection {
+  @apply bg-synth-pink;
+}

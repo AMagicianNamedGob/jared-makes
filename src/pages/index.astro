@@ -1,53 +1,14 @@
 ---
-import { getCollection } from "astro:content";
-import readingTime from "reading-time";
+// import AboutImage from "../components/AboutImage.astro";
+import Experience from "../components/Experience.astro";
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import ContactForm from "../components/ContactForm.jsx";
-import BlogPosts from "../components/BlogPosts.astro";
-
-const allPosts = await getCollection("posts");
-
-const nonDraftPosts = allPosts.filter((p) => !p.data.draft);
-
-const lastFivePosts = nonDraftPosts
-  .sort((a, b) => {
-    let dateA = new Date(a.data.pubDate),
-      dateB = new Date(b.data.pubDate);
-    if (dateA < dateB) return 1;
-    if (dateA > dateB) return -1;
-    return 0;
-  })
-  .slice(0, 5);
+import About from "../components/About.jsx";
 ---
 
-<Layout title="Jared Makes">
-  <Header
-    title="Hello!"
-    subtitle="I'm Jared Truscott"
-    image="/images/about.webp"
-    description={"I am a maker of things. Currently I can be found slinging <code>divs</code> at <a href='https://mojoactive.com target='_blank'>MojoActive</a>. I primarily work in the <a href='https://jamstack.org/''>Jamstack</a>, but I'm not afraid to get my hands dirty <code code>sudoing</code> into some server-side code."}
-  />
-
-  <div class="flex flex-col w-full">
-    <h3 class="text-3xl font-bold tracking-tighter mt-12 mb-4sm:text-4xl">
-      Recent Posts
-    </h3>
-    {
-      lastFivePosts.map((p) => (
-        <BlogPosts
-          date={new Date(p.data.pubDate).toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-          readTime={readingTime(p.body).text}
-          title={p.data.title}
-          description={p.data.description}
-          tags={p.data.tags}
-          url={"/posts/" + p.slug}
-        />
-      ))
-    }
-  </div>
+<Layout title="Home">
+  <main class="px-8">
+    <About client:load />
+    <!-- <AboutImage /> -->
+    <Experience />
+  </main>
 </Layout>

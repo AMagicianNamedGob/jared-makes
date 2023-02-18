@@ -16,22 +16,24 @@ const { projects } = Astro.props;
 <ul role="list" class="grid gap-x-4 gap-y-6 grid-cols-1 sm:grid-cols-2">
   {
     projects.map((p: Project) => (
-        <li class="relative w-full rounded-2xl shadow-lg transition hover:scale-x-105 h-[300px] shadow-black">
+        <li class="relative w-full rounded-2xl shadow-lg transition hover:scale-x-105 h-[400px] shadow-black">
       <a class="transition-all group" href={p.link} target="_blank">
+
           <Image
-            width={300}
-            height={300}
+            width={400}
+            height={400}
             class="object-cover absolute z-10 w-full h-full rounded-lg"
-            src={`images/${p.name.replace(/ /g, "").toLowerCase()}.webp`}
+            src={`/images/${p.name.replace(/ /g, "").toLowerCase()}.webp`}
             alt={`Picture of ${p.name.replace(/ /g, "").toLowerCase()}`}
+            format="webp"
           />
 
           <div class="flex relative z-20 flex-col gap-2 justify-end p-4 w-full h-full">
             <div class="inset-0 w-full h-full rounded-2xl progressive-blur" />
-            <h2 class="text-2xl font-bold tracking-tight  text-white/80 text-shadow">
+            <h2 class="text-2xl font-bold tracking-tight text-white/80 text-shadow">
               {p.name}
             </h2>
-            <p class="text-ellipsis line-clamp-3  text-white/90 text-shadow">
+            <p class="text-ellipsis line-clamp-3 text-white/90 text-shadow">
               {p.description}
             </p>
             <div class="flex flex-row gap-1 items-center">

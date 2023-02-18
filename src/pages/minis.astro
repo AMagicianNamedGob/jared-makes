@@ -1,22 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Grid from "../components/Grid.astro";
-import { Image } from "@astrojs/image/components";
 import images from "./../../public/helpers/miniData.js";
 import Header from "../components/Header.astro";
 ---
 
-<!-- description="A collection of minis I've painted over the past year(s)."
-  type="content" -->
-<Layout title="Minis">
+<Layout
+  title="Minis"
+  description="A collection of minis I've painted (primarily ~28mm, about the size of a Jolly Rancher)."
+>
   <Header
     title="Minis"
     subtitle="It's art in bite-sized chunks!"
-    description="A collection of minis I've painted (primarily ~28mm, about the size of a Jolly Rancher). I've really only been painting minis since 2022, and recently have started to take photos of my work. <span class='text-synth-yellow'>Click on an image to see more details</span>."
+    description="A collection of minis I've painted (primarily ~28mm, about the size of a Jolly Rancher). I've really only been painting minis since 2022.  I try to post new ones here at least every other week. Click on an image to see more details."
     image="/images/candyForScale.jpg"
   />
-  <main class="px-8 pt-16 mx-auto max-w-6xl sm:pt-24 lg:px-16">
-
+  <main class="px-8 pb-8 pt-16 mx-auto max-w-6xl sm:pt-24 lg:px-16">
     <Grid images={images} />
   </main>
 </Layout>

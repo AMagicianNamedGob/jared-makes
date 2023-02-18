@@ -14,7 +14,7 @@ export default () => {
         method="POST"
         className="mt-12 p-6 py-5 px-4 w-full rounded-lg border sm:px-6 border-zinc-900"
       >
-        <h5 className="flex flex-row items-center text-sm font-semibold text-white text-opacity-50">
+        <p className="flex flex-row items-center text-sm font-semibold text-white text-opacity-50">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -30,7 +30,7 @@ export default () => {
           </svg>
 
           <span className="ml-1 text-lg">Contact Jared</span>
-        </h5>
+        </p>
         <p className="mt-2 text-sm text-white text-opacity-50">
           What's up? Want to talk mini painting? Wanna' play some chess?
           Question about the Jam Stack, JavaScript, or slingin' code? Just send me an email and I'll get back

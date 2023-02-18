@@ -3,12 +3,11 @@ import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<!-- <Layout
- title={frontmatter.title}
+<Layout
+  title={frontmatter.title}
   description={frontmatter.description}
   type="article"
-> -->
-<Layout title={frontmatter.title}>
+>
   <main class="px-8 pt-16 mx-auto mb-4 max-w-6xl sm:pt-24 lg:px-16">
     <a
       href="/blog"
@@ -21,8 +20,10 @@ const { frontmatter } = Astro.props;
       pb-12
       prose
       text-white/80
-      prose-headings:text-white/80
-      prose-h1:text-synth-yellow/80
+      prose-headings:text-white/70
+      prose-h1:text-synth-green/80
+      prose-h1:bg-synth-pink-2
+      prose-h1:p-0.5
       prose-a:text-synth-blue
       prose-strong:text-white/90
       prose-code:text-synth-orange/50
@@ -37,7 +38,9 @@ const { frontmatter } = Astro.props;
       prose-img:mx-auto
       prose-img:shadow-md
       prose-video:mx-auto
-     prose-p:text-white/80`}
+      prose-p:text-white/80
+      prose-p:text-lg
+     `}
     >
       <slot />
     </article>

@@ -31,7 +31,7 @@ const projects = [
   {
     name: "Magic 8 Ball",
     description:
-      "One of the fist things I ever built that wasn't a static site. I built this as a way to learn how to use JavaScript.",
+      "One of the fist things I ever built that wasn't a static site. I built this as a way to try some cool CSS (at the time)",
     link: "https://codepen.io/JaredsPens/pen/pLqqaY",
   },
 
@@ -39,18 +39,19 @@ const projects = [
     name: "Super Secret Mystery Project",
     description:
       "It's such a well kept secret that I don't even know what it is.",
-    link: "",
+    link: "#",
   },
 ];
+
+const description = "I've worked on everything from very basic static HTML sites to coin mining apps on Alexa (Amazon did not like that one), to voice ordering KFC via Alexa, to some killer e-commerce sites. Be sure to check back, as I've always got something cooking.";
 ---
 
-<!-- description="A collection of projects I've worked on over the years."
-  type="content" -->
-<Layout title="Projects">
+
+<Layout title="Projects" description={description}>
   <Header
     title="Projects"
     subtitle="Web & Voice"
-    description="I've worked on everything from very basic static HTML sites to coin mining apps on Alexa (Amazon didn't like that idea), to voice ordering via Alexa, to some killer e-commerce sites. Be sure to check back, as I've always got something cooking."
+    description={description}
     image="/images/magic8ball.webp"
   />
   <main class="px-8 pt-16 mx-auto max-w-6xl sm:pt-24 lg:px-16">
