@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404" >
+<main class="relative isolate min-h-full">
+  <img
+    src="/images/404.jpg"
+    alt=""
+    class="absolute inset-0 -z-10 h-full w-full object-cover object-top"
+  />
+  <div class="mx-auto max-w-7xl px-6 py-32 text-center sm:py-40 lg:px-8">
+    <p class="text-base font-semibold leading-8 text-synth-yellow">404</p>
+    <h1 class="mt-4 text-3xl font-bold tracking-tight text-synth-yellow sm:text-5xl">
+      Page not found
+    </h1>
+
+    <div class="mt-10 flex justify-center">
+      <a href="/" class="text-sm font-semibold leading-7 "
+        ><span aria-hidden="true">&larr;</span> Back to home</a
+      >
+    </div>
+  </div>
+</main>
+</Layout>

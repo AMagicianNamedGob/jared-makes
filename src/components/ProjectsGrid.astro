@@ -7,34 +7,36 @@ interface Project {
 interface Props {
   projects: Project[];
 }
+import {Image} from '@astrojs/image/components'
 
 const { projects } = Astro.props;
 ---
 
-<ul role="list" class="grid gap-x-4 gap-y-8 grid-cols-fill-16">
+
+<ul role="list" class="grid gap-x-4 gap-y-6 grid-cols-1 sm:grid-cols-2">
   {
     projects.map((p: Project) => (
-        <li class="relative w-full rounded-2xl shadow-md transition-all duration-200 ease-in-out hover:scale-105 h-[300px] shadow-black">
+        <li class="relative w-full rounded-2xl shadow-lg transition hover:scale-x-105 h-[300px] shadow-black">
       <a class="transition-all group" href={p.link} target="_blank">
-          <img
-            decoding="async"
-            loading="lazy"
-            class="object-cover absolute inset-0 z-10 w-full max-w-full h-full max-h-full rounded-2xl aspect-[1/1]"
+          <Image
+            width={300}
+            height={300}
+            class="object-cover absolute z-10 w-full h-full rounded-lg"
             src={`images/${p.name.replace(/ /g, "").toLowerCase()}.webp`}
             alt={`Picture of ${p.name.replace(/ /g, "").toLowerCase()}`}
           />
 
           <div class="flex relative z-20 flex-col gap-2 justify-end p-4 w-full h-full">
             <div class="inset-0 w-full h-full rounded-2xl progressive-blur" />
-            <h2 class="text-2xl font-bold tracking-tight text-white text-shadow-name">
+            <h2 class="text-2xl font-bold tracking-tight  text-white/80 text-shadow">
               {p.name}
             </h2>
-            <p class="text-ellipsis line-clamp-3 text-[#e4e4e7ff] text-shadow-desc">
+            <p class="text-ellipsis line-clamp-3  text-white/90 text-shadow">
               {p.description}
             </p>
             <div class="flex flex-row gap-1 items-center">
               <svg
-                class="w-6 h-6 hover:cursor-pointer stroke-[0.5] stroke-[#fafafaff] hover:stroke-accent-400"
+                class="w-6 h-6 hover:cursor-pointer stroke-[0.5] stroke-synth-blue"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +54,7 @@ const { projects } = Astro.props;
                   />
                 </>
               </svg>
-              <p class="text-[#e4e4e7ff]">
+              <p class=" text-white/80 text-shadow">
                 {p.link.replace(/(http(s?)):\/\//i, "").split("/")[0]}
               </p>
             </div>
@@ -70,10 +72,8 @@ const { projects } = Astro.props;
     backdrop-filter: blur(8px);
     mask: linear-gradient(to bottom, transparent 0%, black 100%);
   }
-  .text-shadow-desc {
+  .text-shadow {
     text-shadow: 1px 1px 4px black;
   }
-  .text-shadow-name {
-    text-shadow: 0px 1px 2px black;
-  }
+
 </style>

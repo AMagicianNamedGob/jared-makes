@@ -11,7 +11,7 @@ export default function Example() {
               Jared Truscott
             </h2>
             <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-synth-yellow sm:text-4xl">
-              Web Developer / Maker Of Things
+              Web Developer & Maker Of Things
             </h3>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function Example() {
           <div className="mt-8 lg:mt-0">
             <div
               className="mx-auto mt-5
-            text-lg text-white text-opacity-80 lg:col-start-1 lg:row-start-1 lg:max-w-none"
+             text-white text-opacity-80 text-md sm:text-lg lg:col-start-1 lg:row-start-1 lg:max-w-none"
             >
               <p>
                 Ever since I was a kid, I've been obsessed with technology. I

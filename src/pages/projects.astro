@@ -1,6 +1,7 @@
 ---
 import ProjectsGrid from "../components/ProjectsGrid.astro";
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 
 const projects = [
   {
@@ -10,9 +11,15 @@ const projects = [
     link: "https://www.northlineexpress.com/",
   },
   {
+    name: "Jared Makes",
+    description:
+      "This very site, be sure to check it out on Google Page Speed Insights using the link below.",
+    link: "https://pagespeed.web.dev/report?url=https%3A%2F%2Fjaredmakes.com%2F",
+  },
+  {
     name: "Tiger-Hunt",
     description:
-      "A conversion of a static HTML site to a fully functional WordPress site. It was an interesting project as the majority of customers are self-admittedly 'not tech savvy'.",
+      "A conversion of a static HTML site to a fully functional WordPress site.",
     link: "https://gunstockwood.com/",
   },
   {
@@ -27,12 +34,7 @@ const projects = [
       "One of the fist things I ever built that wasn't a static site. I built this as a way to learn how to use JavaScript.",
     link: "https://codepen.io/JaredsPens/pen/pLqqaY",
   },
-  {
-    name: "My Minis Site",
-    description:
-      "In progress. A collection of miniatures that I've painted over the past year.",
-    link: "",
-  },
+
   {
     name: "Super Secret Mystery Project",
     description:
@@ -42,24 +44,16 @@ const projects = [
 ];
 ---
 
-<Layout
-  pageTitle="Projects"
-  description="A collection of projects I've worked on over the years."
-  type="content"
->
+<!-- description="A collection of projects I've worked on over the years."
+  type="content" -->
+<Layout title="Projects">
+  <Header
+    title="Projects"
+    subtitle="Web & Voice"
+    description="I've worked on everything from very basic static HTML sites to coin mining apps on Alexa (Amazon didn't like that idea), to voice ordering via Alexa, to some killer e-commerce sites. Be sure to check back, as I've always got something cooking."
+    image="/images/magic8ball.webp"
+  />
   <main class="px-8 pt-16 mx-auto max-w-6xl sm:pt-24 lg:px-16">
-    <div class="flex flex-col mt-4 space-y-8">
-      <div class="flex flex-col space-y-4">
-        <h1
-          class="text-4xl font-bold tracking-tighter sm:text-5xl max-w-[25ch]"
-        >
-          Jared Made These
-        </h1>
-        <p class="text-primary-300 max-w-[65ch]">
-        So many projects, so little time. Here are some of the projects I've worked on over the years:
-        </p>
-      </div>
-      <ProjectsGrid projects={projects} />
-    </div>
+    <ProjectsGrid projects={projects} />
   </main>
 </Layout>
