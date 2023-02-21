@@ -12,7 +12,7 @@ export default () => {
       <form
         onSubmit={handleSubmit}
         method="POST"
-        className="mt-12 p-6 py-5 px-4 w-full rounded-lg border sm:px-6 border-zinc-900"
+        className="mt-24 p-6 py-5 px-4 w-full rounded-lg border sm:px-6 border-zinc-900"
       >
         <p className="flex flex-row items-center text-sm font-semibold text-white text-opacity-50">
           <svg
