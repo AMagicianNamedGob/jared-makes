@@ -3,7 +3,7 @@ export default function Projects(props) {
   return (
     <div className="bg-transparent">
       <div className="mx-auto py-16  ">
-        <h2 className="sr-only">Products</h2>
+        <h4 className="sr-only">Products</h4>
 
         <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
           {projects.map((project) => (
@@ -20,12 +20,12 @@ export default function Projects(props) {
                   loading="lazy"
                 />
               </div>
-              <h3
+              <h5
                 className="mt-2 text-xl tracking-wide text-synth-blue  underline underline-offset-2
               decoration-from-font py-0.5 px-1 group-hover:text-synth-green transition-all duration-500 ease-in-out"
               >
                 {project.name}
-              </h3>
+              </h5>
               <p className="mt-2 text-md tracking-wide leading-relaxed text-gray-300 group-hover:text-white transition-all duration-500 ease-in-out">
                 {project.description}
               </p>

@@ -2,37 +2,14 @@
 import ProjectsGrid from "../components/ProjectsGrid.jsx";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import projects from "../data/projects.json";
+import ols from "../data/ols.json";
 
-const projects = [
-  {
-    name: "Astro Shop",
-    description:
-      "Hyper-performant e-commerce site built with Astro, Tailwind, and React.",
-    link: "https://astro-shop-jm.vercel.app/",
-  },
-  {
-    name: "Northline Express",
-    description:
-      "One of 8 sites I rebuilt and helped migrate from Magento 1 to Big Commerce for Online stores.",
-    link: "https://www.northlineexpress.com/",
-  },
-  {
-    name: "Tiger-Hunt",
-    description:
-      "A conversion of a static HTML site to a fully functional WordPress site.",
-    link: "https://gunstockwood.com/",
-  },
-  {
-    name: "Amazon Alexa",
-    description:
-      "I assisted on a series of projects for Voice Focused, a company that focused on disrupting the voice assistant market.",
-    link: "https://vimeo.com/309762069?embedded=true&source=vimeo_logo&owner=93600914",
-  },
-];
 
-const description = "I've worked on everything from very basic static HTML sites to coin mining apps on Alexa (Amazon did not like that one), to voice ordering KFC via Alexa, to some killer e-commerce sites. Be sure to check back, as I've always got something cooking.";
+
+const description =
+  "I've worked on everything from very basic static HTML sites to coin mining apps on Alexa (Amazon did not like that one), to voice ordering KFC via Alexa, to some killer e-commerce sites. Be sure to check back, as I've always got something cooking.";
 ---
-
 
 <Layout title="Projects" description={description}>
   <Header
@@ -41,7 +18,29 @@ const description = "I've worked on everything from very basic static HTML sites
     description={description}
     image="/images/magic8ball.webp"
   />
-  <main >
+  <main>
+    <h3
+      class="text-2xl text-white/80 font-bold tracking-tighter mt-12 sm:text-3xl"
+    >
+      Online Stores
+    </h3>
+    <p class="text-white leading-relaxed p-4">
+      This is a suite of stores that I, and a small team, migrated from Magento
+      to Big Commerce. We were able to build these sites and migrate them in
+      less than one year.
+    </p>
+    <ProjectsGrid projects={ols} />
+
+    <h3
+      class="text-2xl text-white/80 font-bold tracking-tighter mt-2 sm:text-3xl"
+    >
+      Other Projects
+    </h3>
+    <p class="text-white leading-relaxed p-4">
+      While the bulk of my work involved building, migrating, maintaining the
+      sites for online stores, I have still found time for some other fun
+      projects.
+    </p>
     <ProjectsGrid projects={projects} />
   </main>
 </Layout>
