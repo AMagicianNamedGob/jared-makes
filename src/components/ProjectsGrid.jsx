@@ -1,13 +1,13 @@
 export default function Projects(props) {
-  const projects = props.projects;
+  const {projects, groupName } = props;
   return (
     <div className="bg-transparent">
       <div className="mx-auto py-16  ">
         <h4 className="sr-only">Products</h4>
 
         <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
-          {projects.map((project) => (
-            <a key={project.id} href={project.link} className="group">
+          {projects.map((project, i) => (
+            <a key={project.id || groupName + '-' + i} href={project.link} className="group">
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200">
                 <img
                   src={`/images/${project.name

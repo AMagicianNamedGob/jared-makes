@@ -7,7 +7,7 @@ import SelectableTags from "../../components/SelectableTags.astro";
 import readingTime from "reading-time";
 import BlogPost from "../../components/BlogPost.astro";
 
-let allPosts = await getCollection("posts").then();
+let allPosts = await getCollection("posts");
 const nonDraftPosts = allPosts.filter((p) => !p.data.draft);
 
 // sort by date
