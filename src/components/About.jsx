@@ -14,7 +14,7 @@ const cld = new Cloudinary({
 
 
 
-export default function Example() {
+export default function About() {
   return (
     <div className="overflow-hidden bg-synth-black">
       <div className="relative mx-auto max-w-7xl py-6 px-6 lg:px-8 lg:py-16">

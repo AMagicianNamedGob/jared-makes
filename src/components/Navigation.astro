@@ -1,5 +1,5 @@
 ---
-const routes = ["Home", "Projects", "Minis", "Blog"];
+import links from '../helpers/navLinks.js';
 import { Image } from '@astrojs/image/components';
 
 ---
@@ -14,14 +14,14 @@ import { Image } from '@astrojs/image/components';
 
     </li>
       {
-        routes.map((route) => (
+        links.map((link) => (
           <li>
             <a
               rel="prefetch"
               class="block px-2 text-white text-opacity-90 font-light  sm:px-4"
-              href={route === "Home" ? "/" : `/${route.toLowerCase()}`}
+              href={link === "Home" ? "/" : `/${link.toLowerCase()}`}
             >
-              {route}
+              {link}
             </a>
           </li>
         ))

@@ -12,7 +12,7 @@ export default () => {
       <form
         onSubmit={handleSubmit}
         method="POST"
-        className="mt-12 p-6 py-5 px-4 w-full rounded-lg border sm:px-6 border-zinc-900"
+        className="mt-24 p-6 py-5 px-4 w-full rounded-lg border sm:px-6 border-zinc-900"
       >
         <p className="flex flex-row items-center text-sm font-semibold text-white text-opacity-50">
           <svg
@@ -32,9 +32,7 @@ export default () => {
           <span className="ml-1 text-lg">Contact Jared</span>
         </p>
         <p className="mt-2 text-sm text-white text-opacity-50">
-          What's up? Want to talk mini painting? Wanna' play some chess?
-          Question about the Jam Stack, JavaScript, or slingin' code? Just send me an email and I'll get back
-          to you as soon as I can.
+          Question about the Jam Stack, JavaScript, slingin' code, or whatever? Just send me an email and I'll get back to you as soon as I can.
         </p>
         <div className="flex flex-col gap-4 mt-6">
           <input

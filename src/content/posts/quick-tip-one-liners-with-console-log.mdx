@@ -1,0 +1,28 @@
+---
+title: "Quick Tip: console.log() One Liners"
+description: "We all love one-liners, right? They're beautiful, concise, easy to read and easy to write. But what if you want to log to the console?"
+pubDate: 2023-03-01
+tags: ["javascript", "quick tip", ]
+---
+
+# Quick Tip: console.log() One Liners
+
+We all love one-liners, right? They're beautiful, concise, easy to read and easy to write. But what if you want to log to the console? Then you've got to add a bunch of extra code to make it work. I've got a quick tip for you that will allow you to log to the console in one-liners.
+
+
+
+```js
+// one-liners are great!
+[1,2,3,4,5].map(num => num +1)
+// but what if you want to log to console ??
+// you could do all this
+[1,2,3,4,5].map((num) => {
+	console.log(num)
+	return num +1
+})
+// orrrrr
+[1,2,3,4,5].map(num => console.log(num) || num +1)
+
+```
+
+Nice!

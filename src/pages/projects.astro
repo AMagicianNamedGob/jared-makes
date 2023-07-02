@@ -1,60 +1,46 @@
 ---
-import ProjectsGrid from "../components/ProjectsGrid.astro";
+import ProjectsGrid from "../components/ProjectsGrid.jsx";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import projects from "../data/projects.json";
+import ols from "../data/ols.json";
 
-const projects = [
-  {
-    name: "Northline Express",
-    description:
-      "One of 8 sites I rebuilt and helped migrate from Magento 1 to Big Commerce for Online stores.",
-    link: "https://www.northlineexpress.com/",
-  },
-  {
-    name: "Jared Makes",
-    description:
-      "This very site, be sure to check it out on Google Page Speed Insights using the link below.",
-    link: "https://pagespeed.web.dev/report?url=https%3A%2F%2Fjaredmakes.com%2F",
-  },
-  {
-    name: "Tiger-Hunt",
-    description:
-      "A conversion of a static HTML site to a fully functional WordPress site.",
-    link: "https://gunstockwood.com/",
-  },
-  {
-    name: "Amazon Alexa",
-    description:
-      "I assisted on a series of projects for Voice Focused, a company that focused on disrupting the voice assistant market.",
-    link: "https://vimeo.com/309762069?embedded=true&source=vimeo_logo&owner=93600914",
-  },
-  {
-    name: "Magic 8 Ball",
-    description:
-      "One of the fist things I ever built that wasn't a static site. I built this as a way to try some cool CSS (at the time)",
-    link: "https://codepen.io/JaredsPens/pen/pLqqaY",
-  },
 
-  {
-    name: "Super Secret Mystery Project",
-    description:
-      "It's such a well kept secret that I don't even know what it is.",
-    link: "#",
-  },
-];
 
-const description = "I've worked on everything from very basic static HTML sites to coin mining apps on Alexa (Amazon did not like that one), to voice ordering KFC via Alexa, to some killer e-commerce sites. Be sure to check back, as I've always got something cooking.";
+const description =
+  "I've worked on everything from very basic static HTML sites to coin mining apps on Alexa (Amazon did not like that one), to voice ordering KFC via Alexa, to some killer e-commerce sites. Be sure to check back, as I've always got something cooking.";
 ---
-
 
 <Layout title="Projects" description={description}>
   <Header
     title="Projects"
     subtitle="Web & Voice"
     description={description}
-    image="/images/magic8ball.webp"
+    image="/images/projects.svg"
   />
-  <main class="px-8 pt-16 mx-auto max-w-6xl sm:pt-24 lg:px-16">
+  <main>
+    <h3
+      class="text-2xl text-white/80 font-bold tracking-tighter mt-12 sm:text-3xl"
+    >
+      Online Stores
+    </h3>
+    <p class="text-white leading-relaxed p-4">
+      This is a suite of stores that I, and a small team, migrated from Magento
+      to Big Commerce. We were able to build these sites and migrate them in
+      less than one year.
+    </p>
+    <ProjectsGrid projects={ols} />
+
+    <h3
+      class="text-2xl text-white/80 font-bold tracking-tighter mt-2 sm:text-3xl"
+    >
+      Other Projects
+    </h3>
+    <p class="text-white leading-relaxed p-4">
+      While the bulk of my work involved building, migrating, maintaining the
+      sites for online stores, I have still found time for some other fun
+      projects.
+    </p>
     <ProjectsGrid projects={projects} />
   </main>
 </Layout>

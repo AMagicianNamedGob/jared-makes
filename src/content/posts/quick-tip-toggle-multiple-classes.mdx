@@ -1,0 +1,26 @@
+---
+title: "Quick Tip: JavaScript Toggle Multiple Classes"
+description: "Recently I was working on building a dead simple light box that required me to toggle multiple classes on a single element. Rather than writing a bunch of toggle statements for each class, I decided to write a function that would just do it for me."
+pubDate: 2023-02-20
+tags: ["javaScript", "quick tip", ]
+---
+
+# Quick Tip: JavaScript Toggle Multiple Classes
+
+Recently I was working on building a [dead simple light box](https://codepen.io/JaredsPens/pen/oNPbZXx?editors=1010) that required me to toggle multiple classes on a single element. Rather than writing a bunch of `el.classList.toggle()` statements, I decided to write a function that would just do it for me.
+
+```js
+
+function toggleClasses(el, ...classes) {
+  classes.map(class) => el.classList.toggle(class)
+}
+
+// Usage
+
+const el = document.querySelector('.my-element');
+el.addEventListener('click',
+  () => toggleClasses(el, 'class1', 'class2', 'class3'));
+
+```
+
+That's it. Pretty simple, right? I hope you find this useful.
