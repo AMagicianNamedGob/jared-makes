@@ -1,12 +1,12 @@
 [
   {
     "name": "Astro Shop",
-    "description": "Hyper-performant e-commerce demo site built with Astro, Tailwind, and React.",
-    "link": "https://astro-shop-jm.vercel.app/"
+    "description": "A hyper-performant e-commerce demo site built with Astro, Tailwind, and React. Note: This site is no longer live.",
+    "link": ""
   },
   {
     "name": "Amazon Alexa",
-    "description": "I assisted on a series of projects for Voice Focused, a company that focused on disrupting the voice assistant market.",
+    "description": "I contributed to several projects for Voice Focused, a company aiming to disrupt the voice assistant market. One project was unexpectedly demoed to Kentucky Fried Chicken by our sales team while I was finalizing it—literally as they were heading to the meeting. Although we didn’t win the business, it was a fun and memorable experience.",
     "link": "https://vimeo.com/309762069?embedded=true&source=vimeo_logo&owner=93600914"
   }
 ]

@@ -5,10 +5,8 @@ import Header from "../components/Header.astro";
 import projects from "../data/projects.json";
 import ols from "../data/ols.json";
 
-
-
 const description =
-  "I've worked on everything from very basic static HTML sites, to some enterprise level e-commerce sites. Be sure to check back, as I've always got something cooking.";
+  "I’ve worked on everything from basic static HTML sites to enterprise-level e-commerce platforms. Be sure to check back—there’s always something new in the works.";
 ---
 
 <Layout title="Projects" description={description}>
@@ -25,9 +23,10 @@ const description =
       Online Stores
     </h3>
     <p class="text-white leading-relaxed p-4">
-      This is a suite of stores that I, and a small team, migrated from Magento
-      to Big Commerce. We were able to build these sites and migrate them in
-      less than one year.
+      This suite of stores was migrated from Magento to BigCommerce by myself
+      and a small team. We completed the build and migration in less than a
+      year. Although the sites have since undergone a nearly complete redesign,
+      I’m still proud of the work we accomplished.
     </p>
     <ProjectsGrid projects={ols} groupName="ols" />
 
@@ -37,8 +36,8 @@ const description =
       Other Projects
     </h3>
     <p class="text-white leading-relaxed p-4">
-      While the bulk of my work involved building, migrating, maintaining the
-      sites for online stores, I have still found time for some other fun
+      While most of my work has focused on building, migrating, and maintaining
+      online store sites, I’ve also enjoyed working on a variety of other fun
       projects.
     </p>
     <ProjectsGrid projects={projects} groupName="misc" />
